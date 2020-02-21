@@ -13,13 +13,31 @@ public class Solution {
 
         String yes = "YES";
         String no = "NO";
-        int flag = -1;
+        int pos1=x1;
+        int pos2=x2;
+        int flag=-1;
+
+        while(pos1<=1000000000 && pos2<=1000000000){
+            if(pos1==pos2){
+                flag=1;
+                break;
+
+            }
+                
+            else{
+                pos1=pos1+v1;
+                pos2=pos2+v2;
+            }
+    
+        }
+       
+        /*int flag = -1;
         if(x2>x1 && v2>v1){
             flag=0;
         }
             
         else if((x2+v2)%(x1+v1)==0)
-           flag=1;
+           flag=1;*/
 
         if(flag==1)
             return "YES";
