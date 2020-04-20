@@ -5,8 +5,8 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
-
-public class Solution {
+class  BreakingTheRecords {
+public static class Solution {
 
     // Complete the breakingRecords function below.
     static int[] breakingRecords(int[] scores) {
@@ -63,4 +63,5 @@ public class Solution {
 
         scanner.close();
     }
+}
 }

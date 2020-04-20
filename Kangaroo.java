@@ -5,8 +5,8 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
-
-public class Solution {
+class Kangaroo {
+public static class Solution {
 
     // Complete the kangaroo function below.
     static String kangaroo(int x1, int v1, int x2, int v2) {
@@ -69,4 +69,6 @@ public class Solution {
 
         scanner.close();
     }
+}
+
 }

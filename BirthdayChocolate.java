@@ -10,48 +10,50 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-public class Solution {
+class BirthdayChocolate {
 
-    // Complete the birthday function below.
-    static int birthday(List<Integer> s, int d, int m) {
-        int count = 0;
+	public static class Solution {
 
-        for(int i = 0; i<=s.size()-m; i++){
-            int sum = 0;
-            for(int j= i; j < m+i; j++){
-                sum += s.get(j);
-            }
-            
-            if(sum == d){
-               count++;
-            }
-        }
-        return count;
+		// Complete the birthday function below.
+		static int birthday(List<Integer> s, int d, int m) {
+			int count = 0;
 
-    }
+			for (int i = 0; i <= s.size() - m; i++) {
+				int sum = 0;
+				for (int j = i; j < m + i; j++) {
+					sum += s.get(j);
+				}
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+				if (sum == d) {
+					count++;
+				}
+			}
+			return count;
 
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
+		}
 
-        List<Integer> s = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+		public static void main(String[] args) throws IOException {
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        String[] dm = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+			int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-        int d = Integer.parseInt(dm[0]);
+			List<Integer> s = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+					.map(Integer::parseInt).collect(toList());
 
-        int m = Integer.parseInt(dm[1]);
+			String[] dm = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-        int result = birthday(s, d, m);
+			int d = Integer.parseInt(dm[0]);
 
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
+			int m = Integer.parseInt(dm[1]);
 
-        bufferedReader.close();
-        bufferedWriter.close();
-    }
+			int result = birthday(s, d, m);
+
+			bufferedWriter.write(String.valueOf(result));
+			bufferedWriter.newLine();
+
+			bufferedReader.close();
+			bufferedWriter.close();
+		}
+	}
 }
